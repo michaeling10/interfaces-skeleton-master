@@ -5,8 +5,7 @@ import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Spliterator;
-import java.util.function.Consumer;
+
 
 public class Client implements Iterable<Deposit>{
     private Deposit[] deposits;
@@ -20,7 +19,7 @@ public class Client implements Iterable<Deposit>{
             throw new IllegalArgumentException("Deposits array cannot be null");
         }
         this.deposits = new Deposit[10];
-        //System.arraycopy(deposits, 0, this.deposits, 0, Math.min(deposits.length, this.deposits.length));
+        System.arraycopy(deposits, 0, this.deposits, 0, Math.min(deposits.length, this.deposits.length));
     }
 
     public boolean addDeposit(Deposit deposit){
